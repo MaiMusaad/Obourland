@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ObourLand")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e16fa6e2aab26dd486ddf767a1310e2b6c4beb09")]
 [assembly: System.Reflection.AssemblyProductAttribute("ObourLand")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ObourLand")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
