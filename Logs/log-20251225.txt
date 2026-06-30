@@ -1,0 +1,860 @@
+2025-12-25 17:24:08 [INF] User profile is available. Using 'C:\Users\mai.mosaad\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-25 17:24:09 [INF] Now listening on: https://localhost:7033
+2025-12-25 17:24:09 [INF] Now listening on: http://localhost:5266
+2025-12-25 17:24:09 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-25 17:24:09 [INF] Hosting environment: Development
+2025-12-25 17:24:09 [INF] Content root path: C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand
+2025-12-25 17:24:11 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger - null null
+2025-12-25 17:24:11 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger - 301 null null 591.8506ms
+2025-12-25 17:24:11 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/index.html - null null
+2025-12-25 17:24:11 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/index.html - 200 null text/html;charset=utf-8 327.5738ms
+2025-12-25 17:24:12 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/swagger-ui.css - null null
+2025-12-25 17:24:12 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/index.css - null null
+2025-12-25 17:24:12 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/swagger-ui-bundle.js - null null
+2025-12-25 17:24:12 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/swagger-ui-standalone-preset.js - null null
+2025-12-25 17:24:12 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-25 17:24:12 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/index.js - null null
+2025-12-25 17:24:12 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/index.js - 200 null application/javascript;charset=utf-8 13.9871ms
+2025-12-25 17:24:12 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 81.2656ms
+2025-12-25 17:24:12 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/index.css - 200 152 text/css 110.1662ms
+2025-12-25 17:24:12 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/swagger-ui-standalone-preset.js - 200 77354 text/javascript 127.7491ms
+2025-12-25 17:24:12 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/swagger-ui.css - 200 23649 text/css 136.8471ms
+2025-12-25 17:24:12 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-25 17:24:12 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/swagger-ui-bundle.js - 200 424834 text/javascript 196.4697ms
+2025-12-25 17:24:12 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 201.0293ms
+2025-12-25 17:24:12 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-25 17:24:12 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 37.5171ms
+2025-12-25 17:24:12 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/favicon-32x32.png - null null
+2025-12-25 17:24:12 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/favicon-32x32.png - 200 628 image/png 21.975ms
+2025-12-25 17:47:12 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 17:47:12 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-25 17:47:12 [INF] Executed DbCommand (79ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-12-25 17:47:12 [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-12-25 17:47:12 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 17:47:12 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 17:47:12 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 17:47:12 [INF] Applying migration '20251225154631_add-role'.
+2025-12-25 17:47:12 [ERR] Failed executing DbCommand (134ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] DROP CONSTRAINT [FK_Users_Role_RoleId];
+2025-12-25 17:48:28 [INF] Executed DbCommand (85ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 17:48:28 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-25 17:48:28 [INF] Executed DbCommand (109ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-12-25 17:48:29 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-12-25 17:48:29 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 17:48:29 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 17:48:29 [INF] Executed DbCommand (117ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 17:48:29 [INF] Applying migration '20251225154631_add-role'.
+2025-12-25 17:48:29 [ERR] Failed executing DbCommand (92ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] DROP CONSTRAINT [FK_Users_Role_RoleId];
+2025-12-25 17:50:45 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 17:50:45 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-25 17:50:45 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-12-25 17:50:45 [INF] Executed DbCommand (79ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-12-25 17:50:45 [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 17:50:45 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 17:50:45 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 17:50:45 [INF] Applying migration '20251225154631_add-role'.
+2025-12-25 17:50:45 [ERR] Failed executing DbCommand (113ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] DROP CONSTRAINT [FK_Users_Role_RoleId];
+2025-12-25 17:51:12 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 17:51:12 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-25 17:51:12 [INF] Executed DbCommand (66ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-12-25 17:51:12 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-12-25 17:51:12 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 17:51:12 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 17:51:12 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 17:51:12 [INF] Applying migration '20251225154631_add-role'.
+2025-12-25 17:51:13 [ERR] Failed executing DbCommand (134ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Role] DROP CONSTRAINT [PK_Role];
+2025-12-25 17:55:33 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 17:55:33 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-25 17:55:33 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-12-25 17:55:34 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-12-25 17:55:34 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 17:55:34 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 17:55:34 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 17:55:34 [INF] Applying migration '20251225155516_add-role'.
+2025-12-25 17:55:34 [ERR] Failed executing DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] DROP CONSTRAINT [FK_Users_Roles_RoleId];
+2025-12-25 17:58:18 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 17:58:18 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-25 17:58:18 [INF] Executed DbCommand (70ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-12-25 17:58:18 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-12-25 17:58:18 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 17:58:18 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 17:58:18 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 17:58:18 [INF] Applying migration '20251225155807_add-role-tbl'.
+2025-12-25 17:58:18 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20251225155807_add-role-tbl', N'9.0.11');
+2025-12-25 17:58:19 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-12-25 18:02:08 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 18:02:08 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-25 18:02:08 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-12-25 18:02:08 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-12-25 18:02:08 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 18:02:08 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 18:02:08 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 18:02:08 [INF] Applying migration '20251225160158_add-role-tbl'.
+2025-12-25 18:02:08 [ERR] Failed executing DbCommand (86ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var sysname;
+SELECT @var = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Users]') AND [c].[name] = N'IsActive');
+IF @var IS NOT NULL EXEC(N'ALTER TABLE [Users] DROP CONSTRAINT [' + @var + '];');
+UPDATE [Users] SET [IsActive] = CAST(0 AS bit) WHERE [IsActive] IS NULL;
+ALTER TABLE [Users] ALTER COLUMN [IsActive] bit NOT NULL;
+ALTER TABLE [Users] ADD DEFAULT CAST(0 AS bit) FOR [IsActive];
+2025-12-25 18:02:52 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 18:02:52 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-25 18:02:52 [INF] Executed DbCommand (83ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-12-25 18:02:52 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-12-25 18:02:52 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 18:02:52 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 18:02:53 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 18:02:53 [INF] Applying migration '20251225160240_add-role-tbl'.
+2025-12-25 18:02:53 [ERR] Failed executing DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var sysname;
+SELECT @var = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Users]') AND [c].[name] = N'IsActive');
+IF @var IS NOT NULL EXEC(N'ALTER TABLE [Users] DROP CONSTRAINT [' + @var + '];');
+ALTER TABLE [Users] ALTER COLUMN [IsActive] bit NULL;
+2025-12-25 18:06:02 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 18:06:02 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-25 18:06:02 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-12-25 18:06:02 [INF] Executed DbCommand (57ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-12-25 18:06:03 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 18:06:03 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 18:06:03 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 18:06:03 [INF] Applying migration '20251225160546_add-role-tbl'.
+2025-12-25 18:06:03 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [IsActive] bit NULL;
+2025-12-25 18:06:03 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [LastModifiedBy] int NULL;
+2025-12-25 18:06:03 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [LastModifiedOn] datetime2 NULL;
+2025-12-25 18:06:03 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [RoleId] int NULL;
+2025-12-25 18:06:03 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Roles] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Roles] PRIMARY KEY ([Id])
+);
+2025-12-25 18:06:03 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Users_RoleId] ON [Users] ([RoleId]);
+2025-12-25 18:06:03 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD CONSTRAINT [FK_Users_Roles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [Roles] ([Id]);
+2025-12-25 18:06:03 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20251225160546_add-role-tbl', N'9.0.11');
+2025-12-25 18:06:03 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-12-25 18:17:46 [INF] User profile is available. Using 'C:\Users\mai.mosaad\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-25 18:17:46 [INF] Now listening on: https://localhost:7033
+2025-12-25 18:17:46 [INF] Now listening on: http://localhost:5266
+2025-12-25 18:17:46 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-25 18:17:46 [INF] Hosting environment: Development
+2025-12-25 18:17:46 [INF] Content root path: C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand
+2025-12-25 18:17:47 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-25 18:17:47 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-25 18:17:47 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 108.1953ms
+2025-12-25 18:17:47 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 187.4382ms
+2025-12-25 18:17:47 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-25 18:17:47 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 58.9885ms
+2025-12-25 18:18:03 [INF] Request starting HTTP/2 PUT https://localhost:7033/api/User/DeactivateUser/1 - null 0
+2025-12-25 18:18:03 [INF] CORS policy execution successful.
+2025-12-25 18:18:04 [INF] Executing endpoint 'ObourLand.Controllers.UserController.DeactivateUser (ObourLand)'
+2025-12-25 18:18:04 [INF] Route matched with {action = "DeactivateUser", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeactivateUser(Int32) on controller ObourLand.Controllers.UserController (ObourLand).
+2025-12-25 18:18:05 [INF] Start DeactivateUser method
+2025-12-25 18:18:06 [INF] Executed DbCommand (114ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[FirstName], [u].[IsActive], [u].[LastModifiedBy], [u].[LastModifiedOn], [u].[LastName], [u].[Password], [u].[RoleId], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+2025-12-25 18:18:07 [INF] Executed DbCommand (371ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Users]
+OUTPUT 1
+WHERE [Id] = @p0;
+2025-12-25 18:18:07 [INF] End DeactivateUser method
+2025-12-25 18:18:07 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2025-12-25 18:18:07 [INF] Executed action ObourLand.Controllers.UserController.DeactivateUser (ObourLand) in 2452.0945ms
+2025-12-25 18:18:07 [INF] Executed endpoint 'ObourLand.Controllers.UserController.DeactivateUser (ObourLand)'
+2025-12-25 18:18:07 [INF] Request finished HTTP/2 PUT https://localhost:7033/api/User/DeactivateUser/1 - 200 null application/json; charset=utf-8 3841.2236ms
+2025-12-25 18:23:26 [INF] User profile is available. Using 'C:\Users\mai.mosaad\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-25 18:23:27 [INF] Now listening on: https://localhost:7033
+2025-12-25 18:23:27 [INF] Now listening on: http://localhost:5266
+2025-12-25 18:23:27 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-25 18:23:27 [INF] Hosting environment: Development
+2025-12-25 18:23:27 [INF] Content root path: C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand
+2025-12-25 18:23:27 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-25 18:23:27 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-25 18:23:27 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 99.9965ms
+2025-12-25 18:23:27 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 177.2267ms
+2025-12-25 18:23:27 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-25 18:23:28 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 61.7576ms
+2025-12-25 18:52:41 [INF] User profile is available. Using 'C:\Users\mai.mosaad\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-25 18:52:41 [INF] Now listening on: https://localhost:7033
+2025-12-25 18:52:41 [INF] Now listening on: http://localhost:5266
+2025-12-25 18:52:41 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-25 18:52:41 [INF] Hosting environment: Development
+2025-12-25 18:52:41 [INF] Content root path: C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand
+2025-12-25 18:52:42 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-25 18:52:42 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-25 18:52:42 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 65.2152ms
+2025-12-25 18:52:42 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 146.2001ms
+2025-12-25 18:52:42 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-25 18:52:42 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 59.8693ms
+2025-12-25 18:52:57 [INF] Request starting HTTP/2 GET https://localhost:7033/api/User - null null
+2025-12-25 18:52:57 [INF] Executing endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-25 18:52:57 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller ObourLand.Controllers.UserController (ObourLand).
+2025-12-25 18:52:58 [INF] Start GetAll users method
+2025-12-25 18:52:59 [INF] Executed DbCommand (289ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id] AS [UserId], [u].[UserName], [u].[FirstName], [u].[LastName]
+FROM [Users] AS [u]
+WHERE [u].[IsActive] = CAST(1 AS bit)
+2025-12-25 18:52:59 [INF] End GetAll users method
+2025-12-25 18:52:59 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ObourLand.Models.UserDto, ObourLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-25 18:52:59 [INF] Executed action ObourLand.Controllers.UserController.GetAll (ObourLand) in 1777.5986ms
+2025-12-25 18:52:59 [INF] Executed endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-25 18:52:59 [INF] Request finished HTTP/2 GET https://localhost:7033/api/User - 200 null application/json; charset=utf-8 1891.5812ms
+2025-12-25 18:54:16 [INF] Request starting HTTP/2 GET https://localhost:7033/api/Report/2 - null null
+2025-12-25 18:54:16 [INF] Executing endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 18:54:16 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(Int32) on controller ObourLand.Controllers.ReportController (ObourLand).
+2025-12-25 18:54:18 [INF] Start GetReport method
+2025-12-25 18:54:19 [INF] Executed DbCommand (91ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[UserId], [u].[UserName], [r].[Date], [r].[Time], [r].[Comment], [r].[X], [r].[Y], [r].[Image]
+FROM [Reports] AS [r]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[UserId] = @__userId_0
+2025-12-25 18:54:19 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ObourLand.Models.GetReportDto, ObourLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-25 18:54:19 [INF] Executed action ObourLand.Controllers.ReportController.GetAsync (ObourLand) in 2654.0451ms
+2025-12-25 18:54:19 [INF] Executed endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 18:54:19 [INF] Request finished HTTP/2 GET https://localhost:7033/api/Report/2 - 200 null application/json; charset=utf-8 2689.0216ms
+2025-12-25 18:57:21 [INF] Request starting HTTP/2 POST https://localhost:7033/api/Report?UserId=2&X=30.00765&Y=31.048352&Date=2025-12-9&Time=12%3A00&Comment=test%20multi-images - multipart/form-data; boundary=----WebKitFormBoundaryjDeUmz3dSZ07zxwW 51164
+2025-12-25 18:57:21 [INF] CORS policy execution successful.
+2025-12-25 18:57:21 [INF] Executing endpoint 'ObourLand.Controllers.ReportController.Post (ObourLand)'
+2025-12-25 18:57:21 [INF] Route matched with {action = "Post", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(ObourLand.Models.CreateReportDto) on controller ObourLand.Controllers.ReportController (ObourLand).
+2025-12-25 18:57:23 [INF] Start CreateReport method
+2025-12-25 18:57:23 [INF] verify the folder for upload the image
+2025-12-25 18:57:23 [INF] Start uploading the Image
+2025-12-25 18:57:23 [INF] The Image Uploaded
+2025-12-25 18:57:23 [INF] verify the folder for upload the image
+2025-12-25 18:57:23 [INF] Start uploading the Image
+2025-12-25 18:57:23 [INF] The Image Uploaded
+2025-12-25 18:57:23 [INF] verify the folder for upload the image
+2025-12-25 18:57:23 [INF] Start uploading the Image
+2025-12-25 18:57:23 [INF] The Image Uploaded
+2025-12-25 18:57:23 [INF] Saving the report object
+2025-12-25 18:57:25 [INF] Executed DbCommand (63ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Reports] ([Comment], [Date], [Image], [Time], [UserId], [X], [Y])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-12-25 18:57:25 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2025-12-25 18:57:25 [INF] Executed action ObourLand.Controllers.ReportController.Post (ObourLand) in 4234.0839ms
+2025-12-25 18:57:25 [INF] Executed endpoint 'ObourLand.Controllers.ReportController.Post (ObourLand)'
+2025-12-25 18:57:25 [INF] Request finished HTTP/2 POST https://localhost:7033/api/Report?UserId=2&X=30.00765&Y=31.048352&Date=2025-12-9&Time=12%3A00&Comment=test%20multi-images - 200 null application/json; charset=utf-8 4247.4789ms
+2025-12-25 18:57:33 [INF] Request starting HTTP/2 GET https://localhost:7033/api/Report/2 - null null
+2025-12-25 18:57:33 [INF] Executing endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 18:57:33 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(Int32) on controller ObourLand.Controllers.ReportController (ObourLand).
+2025-12-25 18:57:35 [INF] Start GetReport method
+2025-12-25 18:57:36 [INF] Executed DbCommand (59ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[UserId], [u].[UserName], [r].[Date], [r].[Time], [r].[Comment], [r].[X], [r].[Y], [r].[Image]
+FROM [Reports] AS [r]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[UserId] = @__userId_0
+2025-12-25 18:57:36 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ObourLand.Models.GetReportDto, ObourLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-25 18:57:36 [INF] Executed action ObourLand.Controllers.ReportController.GetAsync (ObourLand) in 2046.4232ms
+2025-12-25 18:57:36 [INF] Executed endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 18:57:36 [INF] Request finished HTTP/2 GET https://localhost:7033/api/Report/2 - 200 null application/json; charset=utf-8 2048.2132ms
+2025-12-25 18:58:06 [INF] Request starting HTTP/2 GET https://localhost:7033/Images/2-20251225185723.png - null null
+2025-12-25 18:58:06 [INF] Request finished HTTP/2 GET https://localhost:7033/Images/2-20251225185723.png - 404 null null 152.9383ms
+2025-12-25 18:58:06 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7033/Images/2-20251225185723.png, Response status code: 404
+2025-12-25 18:58:10 [INF] Request starting HTTP/2 GET https://localhost:7033/Images/2-20251225185723.png - null null
+2025-12-25 18:58:10 [INF] Request finished HTTP/2 GET https://localhost:7033/Images/2-20251225185723.png - 404 null null 8.7174ms
+2025-12-25 18:58:10 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7033/Images/2-20251225185723.png, Response status code: 404
+2025-12-25 19:03:25 [INF] User profile is available. Using 'C:\Users\mai.mosaad\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-25 19:03:25 [INF] Now listening on: https://localhost:7033
+2025-12-25 19:03:25 [INF] Now listening on: http://localhost:5266
+2025-12-25 19:03:25 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-25 19:03:25 [INF] Hosting environment: Development
+2025-12-25 19:03:25 [INF] Content root path: C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand
+2025-12-25 19:03:26 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-25 19:03:26 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-25 19:03:26 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 60.5865ms
+2025-12-25 19:03:26 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 118.0603ms
+2025-12-25 19:03:26 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-25 19:03:26 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 48.817ms
+2025-12-25 19:03:38 [INF] Request starting HTTP/2 GET https://localhost:7033/api/Report/2 - null null
+2025-12-25 19:03:38 [INF] Executing endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 19:03:38 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(Int32) on controller ObourLand.Controllers.ReportController (ObourLand).
+2025-12-25 19:03:39 [INF] Start GetReport method
+2025-12-25 19:03:40 [INF] Executed DbCommand (109ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[UserId], [u].[UserName], [r].[Date], [r].[Time], [r].[Comment], [r].[X], [r].[Y], [r].[Image]
+FROM [Reports] AS [r]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[UserId] = @__userId_0
+2025-12-25 19:03:40 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ObourLand.Models.GetReportDto, ObourLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-25 19:03:40 [INF] Executed action ObourLand.Controllers.ReportController.GetAsync (ObourLand) in 1696.5463ms
+2025-12-25 19:03:40 [INF] Executed endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 19:03:40 [INF] Request finished HTTP/2 GET https://localhost:7033/api/Report/2 - 200 null application/json; charset=utf-8 1821.7976ms
+2025-12-25 19:04:06 [INF] Request starting HTTP/2 GET https://localhost:7033/Images/2-20251225185723.png - null null
+2025-12-25 19:04:06 [INF] Sending file. Request path: '/2-20251225185723.png'. Physical path: 'C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand\Images\2-20251225185723.png'
+2025-12-25 19:04:06 [INF] Request finished HTTP/2 GET https://localhost:7033/Images/2-20251225185723.png - 200 21649 image/png 211.9845ms
+2025-12-25 19:04:06 [INF] Request starting HTTP/2 GET https://localhost:7033/favicon.ico - null null
+2025-12-25 19:04:06 [INF] Request finished HTTP/2 GET https://localhost:7033/favicon.ico - 404 0 null 3.0358ms
+2025-12-25 19:04:06 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7033/favicon.ico, Response status code: 404
+2025-12-25 19:04:53 [INF] Request starting HTTP/2 GET https://localhost:7033/Images/2-20251225185723.png - null null
+2025-12-25 19:04:53 [INF] The file /2-20251225185723.png was not modified
+2025-12-25 19:04:53 [INF] Request finished HTTP/2 GET https://localhost:7033/Images/2-20251225185723.png - 304 null image/png 8.7605ms
+2025-12-25 19:07:01 [INF] Request starting HTTP/2 POST https://localhost:7033/api/Report?UserId=2&X=30.00765&Y=31.048352&Date=2025-12-9&Time=01%3A00&Comment=test - multipart/form-data; boundary=----WebKitFormBoundaryQCEaa3IqoDSS1tcw 29341
+2025-12-25 19:07:01 [INF] CORS policy execution successful.
+2025-12-25 19:07:01 [INF] Executing endpoint 'ObourLand.Controllers.ReportController.Post (ObourLand)'
+2025-12-25 19:07:01 [INF] Route matched with {action = "Post", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(ObourLand.Models.CreateReportDto) on controller ObourLand.Controllers.ReportController (ObourLand).
+2025-12-25 19:07:27 [INF] Start CreateReport method
+2025-12-25 19:07:39 [INF] verify the folder for upload the image
+2025-12-25 19:07:45 [INF] Start uploading the Image
+2025-12-25 19:07:46 [INF] The Image Uploaded
+2025-12-25 19:07:53 [INF] verify the folder for upload the image
+2025-12-25 19:08:06 [INF] Start uploading the Image
+2025-12-25 19:08:07 [INF] The Image Uploaded
+2025-12-25 19:08:37 [INF] Saving the report object
+2025-12-25 19:08:38 [INF] Executed DbCommand (62ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Reports] ([Comment], [Date], [Image], [Time], [UserId], [X], [Y])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-12-25 19:08:38 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2025-12-25 19:08:38 [INF] Executed action ObourLand.Controllers.ReportController.Post (ObourLand) in 97474.8981ms
+2025-12-25 19:08:38 [INF] Executed endpoint 'ObourLand.Controllers.ReportController.Post (ObourLand)'
+2025-12-25 19:08:38 [INF] Request finished HTTP/2 POST https://localhost:7033/api/Report?UserId=2&X=30.00765&Y=31.048352&Date=2025-12-9&Time=01%3A00&Comment=test - 200 null application/json; charset=utf-8 97495.023ms
+2025-12-25 19:08:46 [INF] Request starting HTTP/2 GET https://localhost:7033/api/Report/2 - null null
+2025-12-25 19:08:46 [INF] Executing endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 19:08:46 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(Int32) on controller ObourLand.Controllers.ReportController (ObourLand).
+2025-12-25 19:08:46 [INF] Start GetReport method
+2025-12-25 19:08:46 [INF] Executed DbCommand (61ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[UserId], [u].[UserName], [r].[Date], [r].[Time], [r].[Comment], [r].[X], [r].[Y], [r].[Image]
+FROM [Reports] AS [r]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[UserId] = @__userId_0
+2025-12-25 19:08:46 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ObourLand.Models.GetReportDto, ObourLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-25 19:08:46 [INF] Executed action ObourLand.Controllers.ReportController.GetAsync (ObourLand) in 113.5293ms
+2025-12-25 19:08:46 [INF] Executed endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 19:08:46 [INF] Request finished HTTP/2 GET https://localhost:7033/api/Report/2 - 200 null application/json; charset=utf-8 115.7191ms
+2025-12-25 19:09:02 [INF] Request starting HTTP/2 GET https://localhost:7033/Images/2-20251225190731.png - null null
+2025-12-25 19:09:02 [INF] Sending file. Request path: '/2-20251225190731.png'. Physical path: 'C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand\Images\2-20251225190731.png'
+2025-12-25 19:09:02 [INF] Request finished HTTP/2 GET https://localhost:7033/Images/2-20251225190731.png - 200 24394 image/png 27.2608ms
+2025-12-25 19:09:19 [INF] Request starting HTTP/2 GET https://localhost:7033/Images/2-20251225190751.png - null null
+2025-12-25 19:09:19 [INF] Sending file. Request path: '/2-20251225190751.png'. Physical path: 'C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand\Images\2-20251225190751.png'
+2025-12-25 19:09:19 [INF] Request finished HTTP/2 GET https://localhost:7033/Images/2-20251225190751.png - 200 4557 image/png 82.1188ms
+2025-12-25 19:10:29 [INF] Request starting HTTP/2 POST https://localhost:7033/api/Report?UserId=2&X=30.00765&Y=31.048352&Date=2025-12-9&Time=01%3A00&Comment=test - multipart/form-data; boundary=----WebKitFormBoundarysAEzltlEKJe0k1Pf 29341
+2025-12-25 19:10:29 [INF] CORS policy execution successful.
+2025-12-25 19:10:29 [INF] Executing endpoint 'ObourLand.Controllers.ReportController.Post (ObourLand)'
+2025-12-25 19:10:29 [INF] Route matched with {action = "Post", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(ObourLand.Models.CreateReportDto) on controller ObourLand.Controllers.ReportController (ObourLand).
+2025-12-25 19:10:34 [INF] Start CreateReport method
+2025-12-25 19:10:34 [INF] verify the folder for upload the image
+2025-12-25 19:10:34 [INF] Start uploading the Image
+2025-12-25 19:10:34 [INF] The Image Uploaded
+2025-12-25 19:10:34 [INF] verify the folder for upload the image
+2025-12-25 19:10:35 [INF] Start uploading the Image
+2025-12-25 19:10:35 [INF] The Image Uploaded
+2025-12-25 19:10:35 [INF] Saving the report object
+2025-12-25 19:10:36 [INF] Executed DbCommand (87ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (Size = 4000), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Reports] ([Comment], [Date], [Image], [Time], [UserId], [X], [Y])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+2025-12-25 19:10:36 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2025-12-25 19:10:36 [INF] Executed action ObourLand.Controllers.ReportController.Post (ObourLand) in 6681.7411ms
+2025-12-25 19:10:36 [INF] Executed endpoint 'ObourLand.Controllers.ReportController.Post (ObourLand)'
+2025-12-25 19:10:36 [INF] Request finished HTTP/2 POST https://localhost:7033/api/Report?UserId=2&X=30.00765&Y=31.048352&Date=2025-12-9&Time=01%3A00&Comment=test - 200 null application/json; charset=utf-8 6689.0221ms
+2025-12-25 19:10:47 [INF] Request starting HTTP/2 GET https://localhost:7033/api/Report/2 - null null
+2025-12-25 19:10:47 [INF] Executing endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 19:10:47 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(Int32) on controller ObourLand.Controllers.ReportController (ObourLand).
+2025-12-25 19:10:47 [INF] Start GetReport method
+2025-12-25 19:10:47 [INF] Executed DbCommand (68ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[UserId], [u].[UserName], [r].[Date], [r].[Time], [r].[Comment], [r].[X], [r].[Y], [r].[Image]
+FROM [Reports] AS [r]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[UserId] = @__userId_0
+2025-12-25 19:10:47 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ObourLand.Models.GetReportDto, ObourLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-25 19:10:47 [INF] Executed action ObourLand.Controllers.ReportController.GetAsync (ObourLand) in 71.9264ms
+2025-12-25 19:10:47 [INF] Executed endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 19:10:47 [INF] Request finished HTTP/2 GET https://localhost:7033/api/Report/2 - 200 null application/json; charset=utf-8 73.5155ms
+2025-12-25 19:11:07 [INF] Request starting HTTP/2 GET https://localhost:7033/Images//Images/2-20251225191034.png - null null
+2025-12-25 19:11:07 [INF] Request finished HTTP/2 GET https://localhost:7033/Images//Images/2-20251225191034.png - 404 null null 17.6826ms
+2025-12-25 19:11:07 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7033/Images//Images/2-20251225191034.png, Response status code: 404
+2025-12-25 19:11:17 [INF] Request starting HTTP/2 GET https://localhost:7033/Images/2-20251225191034.png - null null
+2025-12-25 19:11:17 [INF] Sending file. Request path: '/2-20251225191034.png'. Physical path: 'C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand\Images\2-20251225191034.png'
+2025-12-25 19:11:17 [INF] Request finished HTTP/2 GET https://localhost:7033/Images/2-20251225191034.png - 200 4557 image/png 6.1227ms
+2025-12-25 19:11:33 [INF] Request starting HTTP/2 GET https://localhost:7033/Images/2-20251225191034.png - null null
+2025-12-25 19:11:33 [INF] The file /2-20251225191034.png was not modified
+2025-12-25 19:11:33 [INF] Request finished HTTP/2 GET https://localhost:7033/Images/2-20251225191034.png - 304 null image/png 3.0538ms
+2025-12-25 19:30:20 [INF] User profile is available. Using 'C:\Users\mai.mosaad\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-25 19:30:21 [INF] Now listening on: https://localhost:7033
+2025-12-25 19:30:21 [INF] Now listening on: http://localhost:5266
+2025-12-25 19:30:21 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-25 19:30:21 [INF] Hosting environment: Development
+2025-12-25 19:30:21 [INF] Content root path: C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand
+2025-12-25 19:30:21 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-25 19:30:21 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-25 19:30:21 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 58.3653ms
+2025-12-25 19:30:21 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 112.5223ms
+2025-12-25 19:30:21 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-25 19:30:22 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 63.8589ms
+2025-12-25 19:34:28 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 19:34:28 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-25 19:34:28 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-12-25 19:34:28 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-12-25 19:34:29 [INF] Executed DbCommand (73ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 19:34:29 [INF] Executed DbCommand (72ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 19:34:29 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 19:34:29 [INF] Applying migration '20251225173420_add-supervisorId-col-user'.
+2025-12-25 19:34:29 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD [SupervisorId] int NULL;
+2025-12-25 19:34:29 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20251225173420_add-supervisorId-col-user', N'9.0.11');
+2025-12-25 19:34:29 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-12-25 19:34:52 [INF] User profile is available. Using 'C:\Users\mai.mosaad\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-25 19:34:53 [INF] Now listening on: https://localhost:7033
+2025-12-25 19:34:53 [INF] Now listening on: http://localhost:5266
+2025-12-25 19:34:53 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-25 19:34:53 [INF] Hosting environment: Development
+2025-12-25 19:34:53 [INF] Content root path: C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand
+2025-12-25 19:34:53 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-25 19:34:53 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-25 19:34:53 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 44.3564ms
+2025-12-25 19:34:53 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 102.7929ms
+2025-12-25 19:34:54 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-25 19:34:54 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 58.6455ms
+2025-12-25 19:39:29 [INF] Request starting HTTP/2 POST https://localhost:7033/api/Auth/Register - application/json 139
+2025-12-25 19:39:29 [INF] CORS policy execution successful.
+2025-12-25 19:39:29 [INF] Executing endpoint 'ObourLand.Controllers.AuthController.Register (ObourLand)'
+2025-12-25 19:39:29 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(ObourLand.Models.RegisterDto) on controller ObourLand.Controllers.AuthController (ObourLand).
+2025-12-25 19:39:29 [INF] Start Register method
+2025-12-25 19:39:30 [INF] Executed DbCommand (125ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (DbType = Boolean), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([FirstName], [IsActive], [LastModifiedBy], [LastModifiedOn], [LastName], [Password], [RoleId], [SupervisorId], [UserName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2025-12-25 19:39:30 [INF] End Register method
+2025-12-25 19:39:30 [INF] Executing OkObjectResult, writing value of type 'ObourLand.Entities.User'.
+2025-12-25 19:39:30 [INF] Executed action ObourLand.Controllers.AuthController.Register (ObourLand) in 1655.4351ms
+2025-12-25 19:39:30 [INF] Executed endpoint 'ObourLand.Controllers.AuthController.Register (ObourLand)'
+2025-12-25 19:39:30 [INF] Request finished HTTP/2 POST https://localhost:7033/api/Auth/Register - 200 null application/json; charset=utf-8 1804.5391ms
+2025-12-25 23:44:19 [INF] Executed DbCommand (424ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 23:44:19 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-12-25 23:44:20 [INF] Executed DbCommand (422ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-12-25 23:44:21 [INF] Executed DbCommand (202ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-12-25 23:44:23 [INF] Executed DbCommand (198ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-12-25 23:44:23 [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-12-25 23:44:23 [INF] Executed DbCommand (303ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-12-25 23:44:23 [INF] Applying migration '20251225214348_user-relation'.
+2025-12-25 23:44:24 [INF] Executed DbCommand (1,066ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Users_SupervisorId] ON [Users] ([SupervisorId]);
+2025-12-25 23:44:25 [INF] Executed DbCommand (407ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Users] ADD CONSTRAINT [FK_Users_Users_SupervisorId] FOREIGN KEY ([SupervisorId]) REFERENCES [Users] ([Id]);
+2025-12-25 23:44:25 [INF] Executed DbCommand (147ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20251225214348_user-relation', N'9.0.11');
+2025-12-25 23:44:25 [INF] Executed DbCommand (163ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-12-25 23:47:32 [INF] User profile is available. Using 'C:\Users\mai.mosaad\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-25 23:47:33 [INF] Now listening on: https://localhost:7033
+2025-12-25 23:47:33 [INF] Now listening on: http://localhost:5266
+2025-12-25 23:47:33 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-25 23:47:33 [INF] Hosting environment: Development
+2025-12-25 23:47:33 [INF] Content root path: C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand
+2025-12-25 23:47:34 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-25 23:47:34 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-25 23:47:34 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 123.6555ms
+2025-12-25 23:47:35 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 463.0383ms
+2025-12-25 23:47:35 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-25 23:47:35 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 128.9704ms
+2025-12-25 23:48:08 [INF] Request starting HTTP/2 GET https://localhost:7033/api/Report/2 - null null
+2025-12-25 23:48:08 [INF] Executing endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 23:48:08 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(Int32) on controller ObourLand.Controllers.ReportController (ObourLand).
+2025-12-25 23:48:09 [INF] Start GetReport method
+2025-12-25 23:48:48 [ERR] Failed executing DbCommand (35,242ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[UserId], [u].[UserName], [r].[Date], [r].[Time], [r].[Comment], [r].[X], [r].[Y], [r].[Image], [r0].[Name], CASE
+    WHEN [u0].[Id] IS NULL THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END, [u0].[FirstName], [u0].[LastName]
+FROM [Reports] AS [r]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+LEFT JOIN [Roles] AS [r0] ON [u].[RoleId] = [r0].[Id]
+LEFT JOIN [Users] AS [u0] ON [u].[SupervisorId] = [u0].[Id]
+WHERE [r].[UserId] = @__userId_0
+2025-12-25 23:48:48 [ERR] An exception occurred while iterating over the results of a query for context type 'ObourLand.Entities.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:09c45ab8-029e-4bc0-b203-f495d93505c4
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:09c45ab8-029e-4bc0-b203-f495d93505c4
+Error Number:-2,State:0,Class:11
+2025-12-25 23:48:48 [INF] Executed action ObourLand.Controllers.ReportController.GetAsync (ObourLand) in 40168.4473ms
+2025-12-25 23:48:48 [INF] Executed endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 23:48:49 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at ObourLand.Services.ReportService.GetReports(Int32 userId) in C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand\Services\ReportService.cs:line 19
+   at ObourLand.Controllers.ReportController.GetAsync(Int32 userId) in C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand\Controllers\ReportController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:09c45ab8-029e-4bc0-b203-f495d93505c4
+Error Number:-2,State:0,Class:11
+2025-12-25 23:48:49 [INF] Request finished HTTP/2 GET https://localhost:7033/api/Report/2 - 500 null text/plain; charset=utf-8 40774.9845ms
+2025-12-25 23:50:19 [INF] User profile is available. Using 'C:\Users\mai.mosaad\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-25 23:50:19 [INF] Now listening on: https://localhost:7033
+2025-12-25 23:50:19 [INF] Now listening on: http://localhost:5266
+2025-12-25 23:50:19 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-25 23:50:19 [INF] Hosting environment: Development
+2025-12-25 23:50:19 [INF] Content root path: C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand
+2025-12-25 23:50:20 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-25 23:50:20 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-25 23:50:20 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 147.0491ms
+2025-12-25 23:50:20 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 291.764ms
+2025-12-25 23:50:20 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-25 23:50:20 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 102.7798ms
+2025-12-25 23:50:45 [INF] Request starting HTTP/2 GET https://localhost:7033/api/Report/2 - null null
+2025-12-25 23:50:45 [INF] Executing endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 23:50:45 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(Int32) on controller ObourLand.Controllers.ReportController (ObourLand).
+2025-12-25 23:50:45 [INF] Start GetReport method
+2025-12-25 23:51:27 [ERR] Failed executing DbCommand (35,159ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[UserId], [u].[UserName], [r].[Date], [r].[Time], [r].[Comment], [r].[X], [r].[Y], [r].[Image], [r0].[Name] AS [RoleName]
+FROM [Reports] AS [r]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+LEFT JOIN [Roles] AS [r0] ON [u].[RoleId] = [r0].[Id]
+WHERE [r].[UserId] = @__userId_0
+2025-12-25 23:51:27 [ERR] An exception occurred while iterating over the results of a query for context type 'ObourLand.Entities.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d2470355-a128-4c93-a70d-168cfc2b2073
+Error Number:-2,State:0,Class:11
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d2470355-a128-4c93-a70d-168cfc2b2073
+Error Number:-2,State:0,Class:11
+2025-12-25 23:51:28 [INF] Executed action ObourLand.Controllers.ReportController.GetAsync (ObourLand) in 42785.7339ms
+2025-12-25 23:51:28 [INF] Executed endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-25 23:51:28 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): The wait operation timed out.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at ObourLand.Services.ReportService.GetReports(Int32 userId) in C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand\Services\ReportService.cs:line 19
+   at ObourLand.Controllers.ReportController.GetAsync(Int32 userId) in C:\Users\mai.mosaad\Downloads\ObourLand\ObourLand\Controllers\ReportController.cs:line 27
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:d2470355-a128-4c93-a70d-168cfc2b2073
+Error Number:-2,State:0,Class:11
+2025-12-25 23:51:28 [INF] Request finished HTTP/2 GET https://localhost:7033/api/Report/2 - 500 null text/plain; charset=utf-8 43235.0436ms

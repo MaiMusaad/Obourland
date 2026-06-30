@@ -1,0 +1,390 @@
+2025-12-14 13:34:35 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 13:34:36 [INF] Now listening on: https://localhost:7033
+2025-12-14 13:34:36 [INF] Now listening on: http://localhost:5266
+2025-12-14 13:34:36 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 13:34:36 [INF] Hosting environment: Development
+2025-12-14 13:34:36 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 13:34:38 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 13:34:38 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 13:34:38 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 93.7161ms
+2025-12-14 13:34:38 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 375.5331ms
+2025-12-14 13:34:38 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 13:34:39 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 148.535ms
+2025-12-14 13:34:53 [INF] Request starting HTTP/2 GET https://localhost:7033/ - null null
+2025-12-14 13:34:53 [INF] Executing endpoint 'HTTP: GET /'
+2025-12-14 13:34:53 [INF] Hello! Logging to file.
+2025-12-14 13:34:53 [INF] Executed endpoint 'HTTP: GET /'
+2025-12-14 13:34:53 [INF] Request finished HTTP/2 GET https://localhost:7033/ - 200 null text/plain; charset=utf-8 171.3721ms
+2025-12-14 13:36:08 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 13:36:08 [INF] Now listening on: https://localhost:7033
+2025-12-14 13:36:08 [INF] Now listening on: http://localhost:5266
+2025-12-14 13:36:09 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 13:36:09 [INF] Hosting environment: Development
+2025-12-14 13:36:09 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 13:36:10 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 13:36:10 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 13:36:10 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 88.8897ms
+2025-12-14 13:36:10 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 188.8815ms
+2025-12-14 13:36:10 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 13:36:10 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 98.0781ms
+2025-12-14 13:37:47 [INF] Request starting HTTP/2 POST https://localhost:7033/api/User/User - null 0
+2025-12-14 13:37:47 [INF] CORS policy execution successful.
+2025-12-14 13:37:48 [INF] Executing endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:37:48 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller ObourLand.Controllers.UserController (ObourLand).
+2025-12-14 13:37:48 [INF] Executed action ObourLand.Controllers.UserController.GetAll (ObourLand) in 6.154ms
+2025-12-14 13:37:48 [INF] Executed endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:37:48 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'ObourLand.Services.UserService' while attempting to activate 'ObourLand.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-12-14 13:37:48 [INF] Request finished HTTP/2 POST https://localhost:7033/api/User/User - 500 null text/plain; charset=utf-8 287.1491ms
+2025-12-14 13:38:40 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 13:38:41 [INF] Now listening on: https://localhost:7033
+2025-12-14 13:38:41 [INF] Now listening on: http://localhost:5266
+2025-12-14 13:38:41 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 13:38:41 [INF] Hosting environment: Development
+2025-12-14 13:38:41 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 13:38:42 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 13:38:42 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 13:38:42 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 78.3443ms
+2025-12-14 13:38:42 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 181.5987ms
+2025-12-14 13:38:42 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 13:38:42 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 106.5739ms
+2025-12-14 13:39:08 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 13:39:09 [INF] Now listening on: https://localhost:7033
+2025-12-14 13:39:09 [INF] Now listening on: http://localhost:5266
+2025-12-14 13:39:09 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 13:39:09 [INF] Hosting environment: Development
+2025-12-14 13:39:09 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 13:39:10 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 13:39:10 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 13:39:10 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 98.1638ms
+2025-12-14 13:39:10 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 203.6801ms
+2025-12-14 13:39:10 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 13:39:10 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 97.5934ms
+2025-12-14 13:39:16 [INF] Request starting HTTP/2 GET https://localhost:7033/api/User/User - null null
+2025-12-14 13:39:16 [INF] Executing endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:39:16 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller ObourLand.Controllers.UserController (ObourLand).
+2025-12-14 13:39:16 [INF] Executed action ObourLand.Controllers.UserController.GetAll (ObourLand) in 3.5802ms
+2025-12-14 13:39:16 [INF] Executed endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:39:16 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'ObourLand.Services.UserService' while attempting to activate 'ObourLand.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-12-14 13:39:16 [INF] Request finished HTTP/2 GET https://localhost:7033/api/User/User - 500 null text/plain; charset=utf-8 266.7346ms
+2025-12-14 13:39:51 [INF] Request starting HTTP/2 GET https://localhost:7033/api/Report?userId=1 - null null
+2025-12-14 13:39:51 [INF] Executing endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-14 13:39:51 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(Int32) on controller ObourLand.Controllers.ReportController (ObourLand).
+2025-12-14 13:39:52 [INF] Start GetReport method
+2025-12-14 13:39:55 [INF] Executed DbCommand (247ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[UserId], [u].[UserName], [r].[Date], [r].[Time], [r].[Comment], [r].[X], [r].[Y], [r].[Image]
+FROM [Reports] AS [r]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[UserId] = @__userId_0
+2025-12-14 13:39:55 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ObourLand.Models.GetReportDto, ObourLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-14 13:39:55 [INF] Executed action ObourLand.Controllers.ReportController.GetAsync (ObourLand) in 3575.1957ms
+2025-12-14 13:39:55 [INF] Executed endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-14 13:39:55 [INF] Request finished HTTP/2 GET https://localhost:7033/api/Report?userId=1 - 200 null application/json; charset=utf-8 3664.1155ms
+2025-12-14 13:41:27 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 13:41:27 [INF] Now listening on: https://localhost:7033
+2025-12-14 13:41:27 [INF] Now listening on: http://localhost:5266
+2025-12-14 13:41:28 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 13:41:28 [INF] Hosting environment: Development
+2025-12-14 13:41:28 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 13:41:29 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 13:41:29 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 13:41:29 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 98.4746ms
+2025-12-14 13:41:29 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 222.9416ms
+2025-12-14 13:41:30 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 13:41:30 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 100.8641ms
+2025-12-14 13:41:39 [INF] Request starting HTTP/2 GET https://localhost:7033/api/Report/Report/1 - null null
+2025-12-14 13:41:39 [INF] Request finished HTTP/2 GET https://localhost:7033/api/Report/Report/1 - 404 0 null 95.3961ms
+2025-12-14 13:41:39 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7033/api/Report/Report/1, Response status code: 404
+2025-12-14 13:42:02 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 13:42:03 [INF] Now listening on: https://localhost:7033
+2025-12-14 13:42:03 [INF] Now listening on: http://localhost:5266
+2025-12-14 13:42:03 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 13:42:03 [INF] Hosting environment: Development
+2025-12-14 13:42:03 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 13:42:04 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 13:42:04 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 13:42:04 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 79.1127ms
+2025-12-14 13:42:04 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 175.0016ms
+2025-12-14 13:42:04 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 13:42:04 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 97.075ms
+2025-12-14 13:42:20 [INF] Request starting HTTP/2 GET https://localhost:7033/Report/1 - null null
+2025-12-14 13:42:20 [INF] Request finished HTTP/2 GET https://localhost:7033/Report/1 - 404 0 null 98.9272ms
+2025-12-14 13:42:20 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7033/Report/1, Response status code: 404
+2025-12-14 13:44:51 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 13:44:51 [INF] Now listening on: https://localhost:7033
+2025-12-14 13:44:51 [INF] Now listening on: http://localhost:5266
+2025-12-14 13:44:52 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 13:44:52 [INF] Hosting environment: Development
+2025-12-14 13:44:52 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 13:44:52 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 13:44:52 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 13:44:52 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 89.7423ms
+2025-12-14 13:44:52 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 185.2334ms
+2025-12-14 13:44:53 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 13:44:53 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 94.2322ms
+2025-12-14 13:45:03 [INF] Request starting HTTP/2 GET https://localhost:7033/api/Report/{userId}?userId=1 - null null
+2025-12-14 13:45:03 [INF] Executing endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-14 13:45:03 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(Int32) on controller ObourLand.Controllers.ReportController (ObourLand).
+2025-12-14 13:45:06 [INF] Start GetReport method
+2025-12-14 13:45:09 [INF] Executed DbCommand (241ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[UserId], [u].[UserName], [r].[Date], [r].[Time], [r].[Comment], [r].[X], [r].[Y], [r].[Image]
+FROM [Reports] AS [r]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[UserId] = @__userId_0
+2025-12-14 13:45:09 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ObourLand.Models.GetReportDto, ObourLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-14 13:45:09 [INF] Executed action ObourLand.Controllers.ReportController.GetAsync (ObourLand) in 6124.1955ms
+2025-12-14 13:45:09 [INF] Executed endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-14 13:45:09 [INF] Request finished HTTP/2 GET https://localhost:7033/api/Report/{userId}?userId=1 - 200 null application/json; charset=utf-8 6297.5544ms
+2025-12-14 13:45:41 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 13:45:41 [INF] Now listening on: https://localhost:7033
+2025-12-14 13:45:41 [INF] Now listening on: http://localhost:5266
+2025-12-14 13:45:42 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 13:45:42 [INF] Hosting environment: Development
+2025-12-14 13:45:42 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 13:45:43 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 13:45:43 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 13:45:43 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 75.1011ms
+2025-12-14 13:45:43 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 170.2143ms
+2025-12-14 13:45:43 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 13:45:43 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 103.3761ms
+2025-12-14 13:45:50 [INF] Request starting HTTP/2 GET https://localhost:7033/api/User/User - null null
+2025-12-14 13:45:50 [INF] Executing endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:45:50 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller ObourLand.Controllers.UserController (ObourLand).
+2025-12-14 13:45:50 [INF] Executed action ObourLand.Controllers.UserController.GetAll (ObourLand) in 2.389ms
+2025-12-14 13:45:50 [INF] Executed endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:45:50 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'ObourLand.Services.UserService' while attempting to activate 'ObourLand.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-12-14 13:45:50 [INF] Request finished HTTP/2 GET https://localhost:7033/api/User/User - 500 null text/plain; charset=utf-8 188.9874ms
+2025-12-14 13:46:37 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 13:46:37 [INF] Now listening on: https://localhost:7033
+2025-12-14 13:46:37 [INF] Now listening on: http://localhost:5266
+2025-12-14 13:46:38 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 13:46:38 [INF] Hosting environment: Development
+2025-12-14 13:46:38 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 13:46:38 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 13:46:38 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 13:46:38 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 72.0814ms
+2025-12-14 13:46:39 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 159.3367ms
+2025-12-14 13:46:39 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 13:46:39 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 100.9958ms
+2025-12-14 13:46:48 [INF] Request starting HTTP/2 GET https://localhost:7033/api/User/User - null null
+2025-12-14 13:46:49 [INF] Executing endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:46:49 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller ObourLand.Controllers.UserController (ObourLand).
+2025-12-14 13:46:49 [INF] Executed action ObourLand.Controllers.UserController.GetAll (ObourLand) in 4.5522ms
+2025-12-14 13:46:49 [INF] Executed endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:46:49 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'ObourLand.Services.UserService' while attempting to activate 'ObourLand.Controllers.UserController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-12-14 13:46:49 [INF] Request finished HTTP/2 GET https://localhost:7033/api/User/User - 500 null text/plain; charset=utf-8 204.2144ms
+2025-12-14 13:48:42 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 13:48:43 [INF] Now listening on: https://localhost:7033
+2025-12-14 13:48:43 [INF] Now listening on: http://localhost:5266
+2025-12-14 13:48:43 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 13:48:43 [INF] Hosting environment: Development
+2025-12-14 13:48:43 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 13:48:44 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 13:48:44 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 13:48:44 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 87.6189ms
+2025-12-14 13:48:44 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 178.3443ms
+2025-12-14 13:48:45 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 13:48:45 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 104.0643ms
+2025-12-14 13:48:53 [INF] Request starting HTTP/2 GET https://localhost:7033/api/User/User - null null
+2025-12-14 13:48:53 [INF] Executing endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:48:53 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller ObourLand.Controllers.UserController (ObourLand).
+2025-12-14 13:48:54 [INF] Start GetAll users method
+2025-12-14 13:48:56 [INF] Executed DbCommand (202ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [Users] AS [u]
+2025-12-14 13:48:57 [INF] End GetAll users method
+2025-12-14 13:48:57 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ObourLand.Entities.User, ObourLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-14 13:48:57 [INF] Executed action ObourLand.Controllers.UserController.GetAll (ObourLand) in 3238.1043ms
+2025-12-14 13:48:57 [INF] Executed endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:48:57 [INF] Request finished HTTP/2 GET https://localhost:7033/api/User/User - 200 null application/json; charset=utf-8 3399.4646ms
+2025-12-14 13:49:50 [INF] Request starting HTTP/2 POST https://localhost:7033/api/Auth/Register - application/json 103
+2025-12-14 13:49:50 [INF] CORS policy execution successful.
+2025-12-14 13:49:50 [INF] Executing endpoint 'ObourLand.Controllers.AuthController.Register (ObourLand)'
+2025-12-14 13:49:50 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(ObourLand.Models.RegisterDto) on controller ObourLand.Controllers.AuthController (ObourLand).
+2025-12-14 13:49:50 [INF] Start Register method
+2025-12-14 13:49:51 [INF] Executed DbCommand (199ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([FirstName], [LastName], [Password], [UserName])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2025-12-14 13:49:51 [INF] End Register method
+2025-12-14 13:49:51 [INF] Executing OkObjectResult, writing value of type 'ObourLand.Entities.User'.
+2025-12-14 13:49:51 [INF] Executed action ObourLand.Controllers.AuthController.Register (ObourLand) in 531.6525ms
+2025-12-14 13:49:51 [INF] Executed endpoint 'ObourLand.Controllers.AuthController.Register (ObourLand)'
+2025-12-14 13:49:51 [INF] Request finished HTTP/2 POST https://localhost:7033/api/Auth/Register - 200 null application/json; charset=utf-8 560.4498ms
+2025-12-14 13:49:58 [INF] Request starting HTTP/2 GET https://localhost:7033/api/User/User - null null
+2025-12-14 13:49:58 [INF] Executing endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:49:58 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller ObourLand.Controllers.UserController (ObourLand).
+2025-12-14 13:49:58 [INF] Start GetAll users method
+2025-12-14 13:49:58 [INF] Executed DbCommand (152ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[FirstName], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [Users] AS [u]
+2025-12-14 13:49:58 [INF] End GetAll users method
+2025-12-14 13:49:58 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ObourLand.Entities.User, ObourLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-14 13:49:58 [INF] Executed action ObourLand.Controllers.UserController.GetAll (ObourLand) in 270.335ms
+2025-12-14 13:49:58 [INF] Executed endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:49:58 [INF] Request finished HTTP/2 GET https://localhost:7033/api/User/User - 200 null application/json; charset=utf-8 276.0465ms
+2025-12-14 13:52:52 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 13:52:53 [INF] Now listening on: https://localhost:7033
+2025-12-14 13:52:53 [INF] Now listening on: http://localhost:5266
+2025-12-14 13:52:53 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 13:52:53 [INF] Hosting environment: Development
+2025-12-14 13:52:53 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 13:52:54 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 13:52:54 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 13:52:54 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 64.7148ms
+2025-12-14 13:52:54 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 153.1194ms
+2025-12-14 13:52:54 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 13:52:54 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 117.1191ms
+2025-12-14 13:53:27 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 13:53:28 [INF] Now listening on: https://localhost:7033
+2025-12-14 13:53:28 [INF] Now listening on: http://localhost:5266
+2025-12-14 13:53:28 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 13:53:28 [INF] Hosting environment: Development
+2025-12-14 13:53:28 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 13:53:29 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 13:53:29 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 13:53:29 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 96.1421ms
+2025-12-14 13:53:29 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 197.7855ms
+2025-12-14 13:53:30 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 13:53:30 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 74.1909ms
+2025-12-14 13:53:41 [INF] Request starting HTTP/2 GET https://localhost:7033/api/User - null null
+2025-12-14 13:53:41 [INF] Executing endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:53:41 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller ObourLand.Controllers.UserController (ObourLand).
+2025-12-14 13:53:42 [INF] Start GetAll users method
+2025-12-14 13:53:45 [INF] Executed DbCommand (204ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserName], [u].[FirstName], [u].[LastName]
+FROM [Users] AS [u]
+2025-12-14 13:53:45 [INF] End GetAll users method
+2025-12-14 13:53:45 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ObourLand.Models.UserDto, ObourLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-14 13:53:45 [INF] Executed action ObourLand.Controllers.UserController.GetAll (ObourLand) in 3485.7171ms
+2025-12-14 13:53:45 [INF] Executed endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:53:45 [INF] Request finished HTTP/2 GET https://localhost:7033/api/User - 200 null application/json; charset=utf-8 3672.7838ms
+2025-12-14 13:54:34 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 13:54:35 [INF] Now listening on: https://localhost:7033
+2025-12-14 13:54:35 [INF] Now listening on: http://localhost:5266
+2025-12-14 13:54:35 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 13:54:35 [INF] Hosting environment: Development
+2025-12-14 13:54:35 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 13:54:36 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 13:54:36 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 13:54:36 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 115.1302ms
+2025-12-14 13:54:36 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 206.5387ms
+2025-12-14 13:54:36 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 13:54:36 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 96.8731ms
+2025-12-14 13:54:46 [INF] Request starting HTTP/2 GET https://localhost:7033/api/User - null null
+2025-12-14 13:54:46 [INF] Executing endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:54:46 [INF] Route matched with {action = "GetAll", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller ObourLand.Controllers.UserController (ObourLand).
+2025-12-14 13:54:46 [INF] Start GetAll users method
+2025-12-14 13:54:50 [INF] Executed DbCommand (283ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id] AS [UserId], [u].[UserName], [u].[FirstName], [u].[LastName]
+FROM [Users] AS [u]
+2025-12-14 13:54:50 [INF] End GetAll users method
+2025-12-14 13:54:50 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ObourLand.Models.UserDto, ObourLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-14 13:54:50 [INF] Executed action ObourLand.Controllers.UserController.GetAll (ObourLand) in 4440.0929ms
+2025-12-14 13:54:50 [INF] Executed endpoint 'ObourLand.Controllers.UserController.GetAll (ObourLand)'
+2025-12-14 13:54:50 [INF] Request finished HTTP/2 GET https://localhost:7033/api/User - 200 null application/json; charset=utf-8 4608.8791ms
+2025-12-14 14:26:11 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 14:26:12 [INF] Now listening on: https://localhost:7033
+2025-12-14 14:26:12 [INF] Now listening on: http://localhost:5266
+2025-12-14 14:26:12 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 14:26:12 [INF] Hosting environment: Development
+2025-12-14 14:26:12 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 14:26:13 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 14:26:13 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 14:26:13 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 76.3722ms
+2025-12-14 14:26:13 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 179.0502ms
+2025-12-14 14:26:13 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 14:26:13 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 107.2889ms
+2025-12-14 14:26:22 [INF] Request starting HTTP/2 GET https://localhost:7033/api/Report/1 - null null
+2025-12-14 14:26:22 [INF] Request finished HTTP/2 GET https://localhost:7033/api/Report/1 - 404 0 null 137.2923ms
+2025-12-14 14:26:22 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7033/api/Report/1, Response status code: 404
+2025-12-14 14:26:58 [INF] User profile is available. Using 'C:\Users\a915387\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-14 14:26:59 [INF] Now listening on: https://localhost:7033
+2025-12-14 14:26:59 [INF] Now listening on: http://localhost:5266
+2025-12-14 14:26:59 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-14 14:26:59 [INF] Hosting environment: Development
+2025-12-14 14:26:59 [INF] Content root path: C:\Users\a915387\source\repos\ObourLand\ObourLand
+2025-12-14 14:27:00 [INF] Request starting HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-14 14:27:00 [INF] Request starting HTTP/2 GET https://localhost:7033/_vs/browserLink - null null
+2025-12-14 14:27:00 [INF] Request finished HTTP/2 GET https://localhost:7033/_framework/aspnetcore-browser-refresh.js - 200 16503 application/javascript; charset=utf-8 73.7429ms
+2025-12-14 14:27:00 [INF] Request finished HTTP/2 GET https://localhost:7033/_vs/browserLink - 200 null text/javascript; charset=UTF-8 170.4215ms
+2025-12-14 14:27:00 [INF] Request starting HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - null null
+2025-12-14 14:27:00 [INF] Request finished HTTP/2 GET https://localhost:7033/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 118.7884ms
+2025-12-14 14:27:09 [INF] Request starting HTTP/2 GET https://localhost:7033/api/Report/1 - null null
+2025-12-14 14:27:09 [INF] Executing endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-14 14:27:09 [INF] Route matched with {action = "Get", controller = "Report"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(Int32) on controller ObourLand.Controllers.ReportController (ObourLand).
+2025-12-14 14:27:14 [INF] Start GetReport method
+2025-12-14 14:27:18 [INF] Executed DbCommand (240ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[UserId], [u].[UserName], [r].[Date], [r].[Time], [r].[Comment], [r].[X], [r].[Y], [r].[Image]
+FROM [Reports] AS [r]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[UserId] = @__userId_0
+2025-12-14 14:27:18 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[ObourLand.Models.GetReportDto, ObourLand, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-12-14 14:27:18 [INF] Executed action ObourLand.Controllers.ReportController.GetAsync (ObourLand) in 8240.0933ms
+2025-12-14 14:27:18 [INF] Executed endpoint 'ObourLand.Controllers.ReportController.GetAsync (ObourLand)'
+2025-12-14 14:27:18 [INF] Request finished HTTP/2 GET https://localhost:7033/api/Report/1 - 200 null application/json; charset=utf-8 8435.2012ms

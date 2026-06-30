@@ -1,0 +1,6 @@
+@ObourLand_HostAddress = http://localhost:5266
+
+GET {{ObourLand_HostAddress}}/swagger/
+Accept: application/json
+
+###
