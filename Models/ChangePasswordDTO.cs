@@ -7,8 +7,9 @@ namespace ObourLand.Models
         [Required]
         public string UserName { get; set; } = null!;
 
-        [Required]
-        [MinLength(6, ErrorMessage = "The password must be at least 6 characters long.")] 
+        [Required(ErrorMessage = "Password is required.")]
+        [StringLength(20, MinimumLength = 6, ErrorMessage = "Password must be between 6 and 20 characters.")]
+        [RegularExpression(@"^\S{6,20}$", ErrorMessage = "Password cannot contain spaces.")]
         public string Password { get; set; } = null!;
     }
 }

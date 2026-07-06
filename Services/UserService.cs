@@ -145,7 +145,6 @@ namespace ObourLand.Services
 
            user.FirstName = request.FirstName;
            user.LastName = request.LastName;
-           user.SupervisorId = request.SupervisorId;
             _context.Update(user);
             await _context.SaveChangesAsync();
             return  Result<bool>.Success(true, "The user updated successfully.");

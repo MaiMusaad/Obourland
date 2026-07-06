@@ -13,6 +13,5 @@ namespace ObourLand.Models
         [Required]
         public string LastName { get; set; } = null!;
 
-        public int SupervisorId { get; set; }
     }
 }
