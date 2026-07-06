@@ -7,6 +7,8 @@
         public bool IsActive { get; set; }
         public int? LastModifiedBy { get; set; }
         public DateTime? LastModifiedOn { get; set; }
+        public DateTime? CreatedOn { get; set; }
+
 
         public ICollection<User> Users { get; set; }
     }

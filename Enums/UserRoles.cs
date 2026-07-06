@@ -4,7 +4,6 @@
     {
         TeamLead = 1,
         Supervisor = 2,
-        SalesMan = 3,
-        Organizer = 1002,
+        SalesMan = 3
     }
 }

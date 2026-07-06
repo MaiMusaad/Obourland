@@ -45,6 +45,21 @@ namespace ObourLand.Controllers
             _logger.LogInformation("End Register method");
             return Ok(res);
         }
+
+        [HttpPost("ChangePassword")]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDTO request)
+        {
+            _logger.LogInformation("Start ChangePassword method");
+            var res = await _userService.ChangePassword(request);
+            _logger.LogInformation("End ChangePassword method");
+            if(res.IsSuccess == false)
+            {
+                _logger.LogWarning("ChangePassword failed: {Message}", res.Message);
+                return BadRequest(res);
+            }
+
+            return Ok(res);
+        }
     }
 
 }

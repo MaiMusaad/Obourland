@@ -126,12 +126,27 @@ namespace ObourLand.Services
                 LastName = register.LastName,
                 IsActive = true, 
                 RoleId = register.RoleId,
-                GroupId = (register.GroupId == 0 ? null: register.GroupId) 
+                GroupId = (register.GroupId == 0 ? null: register.GroupId) ,
+                CreatedOn = DateTime.UtcNow
             };
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
             return user;
         }
+
+        public async Task<Result<bool>> ChangePassword(ChangePasswordDTO request)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(d => d.UserName == request.UserName);
+            if(user is null)
+                return Result<bool>.Failure("The username is not correct.");
+
+            user.Password = request.Password;
+            user.LastModifiedOn = DateTime.UtcNow;
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+            return Result<bool>.Success(true, "The password changed successfully.");
+        }
+
         public async Task<Result<bool>> ActivateUser(int userId)
         {
             try

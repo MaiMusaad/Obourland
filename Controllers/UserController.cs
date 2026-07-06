@@ -51,26 +51,26 @@ namespace ObourLand.Controllers
             return Ok(users);
         }
 
-        [HttpGet("GetAssignedUsers/{supervisorId}")]
+        [HttpGet("GetBySupervisor/{supervisorId}")]
         [ProducesResponseType(typeof(List<UserDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(List<UserDto>), StatusCodes.Status401Unauthorized)]
-        public async Task<IActionResult> GetAssignedUsers([FromRoute] int supervisorId)
+        public async Task<IActionResult> GetBySupervisor([FromRoute] int supervisorId)
         {
-            _logger.LogInformation($"Start GetAssignedUsers method: {supervisorId}");
+            _logger.LogInformation($"Start GetBySupervisor method: {supervisorId}");
             var users = await _userService.GetAssignedUsers(supervisorId);
-            _logger.LogInformation($"End GetAssignedUsers method: {supervisorId}");
+            _logger.LogInformation($"End GetBySupervisor method: {supervisorId}");
             return Ok(users);
         }
 
-        [HttpPost("AssignedUsers/{supervisorId}")]
+        [HttpPost("AssignedSupervisor/{supervisorId}")]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status401Unauthorized)]
-        public async Task<IActionResult> AssignedUsers([FromRoute] int supervisorId, List<int> userIds)
+        public async Task<IActionResult> AssignedSupervisor([FromRoute] int supervisorId, List<int> userIds)
         {
-            _logger.LogInformation($"Start AssignedUsers method: {supervisorId}");
+            _logger.LogInformation($"Start AssignedSupervisor method: {supervisorId}");
             var result = await _userService.AssignedUsers(supervisorId, userIds);
-            _logger.LogInformation($"End AssignedUsers method: {supervisorId}");
+            _logger.LogInformation($"End AssignedSupervisor method: {supervisorId}");
             if(result.IsSuccess == false)
             {
                 return BadRequest(result);
