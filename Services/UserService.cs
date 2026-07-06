@@ -122,6 +122,10 @@ namespace ObourLand.Services
 
         public async Task<User> Create(RegisterDto register)
         {
+            var checkUseName = await _context.Users.FirstOrDefaultAsync(d => d.UserName == register.UserName);
+            if (checkUseName != null) {
+                throw new InvalidOperationException("Username already exists.");
+            }
             var user = new User() { 
                 UserName = register.UserName,
                 Password = register.Password,
