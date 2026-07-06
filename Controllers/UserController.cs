@@ -62,6 +62,23 @@ namespace ObourLand.Controllers
             return Ok(users);
         }
 
+        [HttpPut("UpdateProfile")]
+        [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status401Unauthorized)]
+        public async Task<IActionResult> UpdateProfile(UpdateUserDto request)
+        {
+            _logger.LogInformation($"Start UpdateProfile method.");
+            var result = await _userService.UpdateProfile(request);
+            _logger.LogInformation($"End UpdateProfile method.");
+            if (result.IsSuccess == false)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
+        }
+
         [HttpPost("AssignedSupervisor/{supervisorId}")]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status400BadRequest)]

@@ -24,6 +24,7 @@ namespace ObourLand.Services
                 LastName = s.LastName,
                 GroupName = s.Group.Name,
                 RoleName = s.Role.Name,
+                SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}",
             }).ToListAsync();
         }
 
@@ -37,6 +38,7 @@ namespace ObourLand.Services
                                               LastName = s.LastName,
                                               GroupName = s.Group.Name,
                                               RoleName = s.Role.Name,
+                                              SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}"
                                        }).FirstOrDefaultAsync();
         }
 
@@ -87,6 +89,7 @@ namespace ObourLand.Services
                                                 LastName = s.LastName,
                                                 GroupName = s.Group.Name,
                                                 RoleName = s.Role.Name,
+                                                SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}"
                                             }).ToListAsync();
             return users;
         }
@@ -132,6 +135,20 @@ namespace ObourLand.Services
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
             return user;
+        }
+
+        public async Task<Result<bool>> UpdateProfile(UpdateUserDto request)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(d => d.Id == request.UserId);
+            if (user is null)
+                return Result<bool>.Failure("The user not found.");
+
+           user.FirstName = request.FirstName;
+           user.LastName = request.LastName;
+           user.SupervisorId = request.SupervisorId;
+            _context.Update(user);
+            await _context.SaveChangesAsync();
+            return  Result<bool>.Success(true, "The user updated successfully.");
         }
 
         public async Task<Result<bool>> ChangePassword(ChangePasswordDTO request)
