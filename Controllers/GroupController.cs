@@ -31,7 +31,6 @@ namespace ObourLand.Controllers
             return Ok(res);
         }
 
-        [Authorize]
         [HttpPost("Create")]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status400BadRequest)]
@@ -48,7 +47,6 @@ namespace ObourLand.Controllers
             return Ok(res);
         }
 
-        [Authorize]
         [HttpPut("Update")]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status400BadRequest)]
@@ -65,16 +63,15 @@ namespace ObourLand.Controllers
             return Ok(res);
         }
 
-        [Authorize]
         [HttpPut("Activate/{id}")]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status401Unauthorized)]
         public async Task<IActionResult> Activate(int id)
         {
-            _logger.LogInformation("Start DeactivateGroup method");
+            _logger.LogInformation("Start ActivateGroup method");
             var res = await _groupService.Activate(id);
-            _logger.LogInformation("End DeactivateGroup method");
+            _logger.LogInformation("End ActivateGroup method");
             if (res.IsSuccess == false)
             {
                 return BadRequest(res);
@@ -82,7 +79,6 @@ namespace ObourLand.Controllers
             return Ok(res);
         }
 
-        [Authorize]
         [HttpPut("Deactivate/{id}")]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status400BadRequest)]

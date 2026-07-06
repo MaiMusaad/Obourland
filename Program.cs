@@ -15,13 +15,13 @@ Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
     .Enrich.FromLogContext()
     .WriteTo.File(
-        path: "Logs/log-.txt",           
-        rollingInterval: RollingInterval.Day, 
+        path: "Logs/log-.txt",
+        rollingInterval: RollingInterval.Day,
         outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] {Message:lj}{NewLine}{Exception}"
     )
     .CreateLogger();
 
-builder.Host.UseSerilog();
+builder.Host.UseSerilog(); 
 builder.Services.AddControllers();
 //enable CORS 
 builder.Services.AddCors(options =>
@@ -94,7 +94,7 @@ app.UseSwaggerUI(c =>
 // Configure the HTTP request pipeline.
 //app.UseHttpsRedirection();
 
-app.UseCors();
+app.UseCors(); 
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

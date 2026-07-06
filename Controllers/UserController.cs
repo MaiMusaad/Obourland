@@ -18,7 +18,6 @@ namespace ObourLand.Controllers
             _logger = logger;
         }
 
-        [Authorize]
         [HttpGet("GetAll")]
         [ProducesResponseType(typeof(List<UserDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(List<UserDto>), StatusCodes.Status401Unauthorized)]
@@ -30,7 +29,6 @@ namespace ObourLand.Controllers
             return Ok(users);
         }
 
-        [Authorize]
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(UserDto), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(UserDto), StatusCodes.Status401Unauthorized)]
@@ -42,7 +40,6 @@ namespace ObourLand.Controllers
             return Ok(user);
         }
 
-        [Authorize]
         [HttpGet("GetSupervisors")]
         [ProducesResponseType(typeof(List<UserDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(List<UserDto>), StatusCodes.Status401Unauthorized)]
@@ -54,7 +51,6 @@ namespace ObourLand.Controllers
             return Ok(users);
         }
 
-        [Authorize]
         [HttpGet("GetAssignedUsers/{supervisorId}")]
         [ProducesResponseType(typeof(List<UserDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(List<UserDto>), StatusCodes.Status401Unauthorized)]
@@ -66,7 +62,6 @@ namespace ObourLand.Controllers
             return Ok(users);
         }
 
-        [Authorize]
         [HttpPost("AssignedUsers/{supervisorId}")]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status400BadRequest)]
@@ -84,7 +79,6 @@ namespace ObourLand.Controllers
             return Ok(result);
         }
 
-        [Authorize]
         [HttpPost("Activate/{id}")]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status400BadRequest)]
@@ -102,7 +96,6 @@ namespace ObourLand.Controllers
             return Ok(res);
         }
 
-        [Authorize]
         [HttpPost("Deactivate/{id}")]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(Result<bool>), StatusCodes.Status400BadRequest)]
