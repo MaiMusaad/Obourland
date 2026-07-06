@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ObourLand.Entities;
+using ObourLand.Enums;
 using ObourLand.Models;
 
 namespace ObourLand.Services
@@ -26,6 +27,19 @@ namespace ObourLand.Services
             }).ToListAsync();
         }
 
+        public async Task<UserDto?> GetById(int id)
+        {
+            return await _context.Users.Where(w => w.IsActive == true && w.Id == id)
+                                       .Select(s => new UserDto {
+                                              UserId = s.Id,
+                                              UserName = s.UserName,
+                                              FirstName = s.FirstName,
+                                              LastName = s.LastName,
+                                              GroupName = s.Group.Name,
+                                              RoleName = s.Role.Name,
+                                       }).FirstOrDefaultAsync();
+        }
+
         public async Task<GroupedUsersDto?> GetByGroup(int groupId)
         {
             var res = await _context.Users.Where(w => w.IsActive == true && w.GroupId == groupId && groupId > 0 && w.Group.IsActive == true)
@@ -47,17 +61,56 @@ namespace ObourLand.Services
             return res;
         }
 
-        //public async Task<List<UserDto>> GetSupervisors()
-        //{
-        //    return await _context.Users.Where(w => w.IsActive == true && w.RoleId == 2).Select(s => new UserDto
-        //    {
-        //        UserId = s.Id,
-        //        UserName = s.UserName,
-        //        FirstName = s.FirstName,
-        //        LastName = s.LastName,
-        //        RoleName = s.Role.Name,
-        //    }).ToListAsync();
-        //}
+        public async Task<List<UserDto>> GetSupervisors()
+        {
+            var users = await _context.Users.Where(w => w.IsActive == true && w.RoleId == (int)UserRoles.Supervisor)
+                                       .Select(s => new UserDto
+                                        {
+                                            UserId = s.Id,
+                                            UserName = s.UserName,
+                                            FirstName = s.FirstName,
+                                            LastName = s.LastName,
+                                            RoleName = s.Role.Name,
+                                        }).ToListAsync();
+
+            return users;
+        }
+
+        public async Task<List<UserDto>> GetAssignedUsers(int supervisorId)
+        {
+            var users = await _context.Users.Where(w => w.IsActive == true && w.SupervisorId == supervisorId)
+                                            .Select(s => new UserDto
+                                            {
+                                                UserId = s.Id,
+                                                UserName = s.UserName,
+                                                FirstName = s.FirstName,
+                                                LastName = s.LastName,
+                                                GroupName = s.Group.Name,
+                                                RoleName = s.Role.Name,
+                                            }).ToListAsync();
+            return users;
+        }
+
+        public async Task<Result<bool>> AssignedUsers(int supervisorId, List<int> userIds)
+        {
+            try
+            {
+                var users = await _context.Users.Where(w => userIds.Contains(w.Id)).ToListAsync();
+                users = users.Select(s =>
+                {
+                    s.SupervisorId = supervisorId;
+                    return s;
+                }).ToList();
+
+                _context.Users.UpdateRange(users);
+                await _context.SaveChangesAsync();
+                return Result<bool>.Success(true, "Users assigned to supervisor successfully.");
+            }
+            catch (Exception ex)
+            {
+                return Result<bool>.Failure("Failed to assign users to supervisor.");
+            }
+        }
 
         public async Task<User> CheckUser(string userName, string password)
         {
@@ -66,36 +119,59 @@ namespace ObourLand.Services
 
         public async Task<User> Create(RegisterDto register)
         {
-            var user = new User() { UserName = register.UserName, Password = register.Password, FirstName = register.FirstName, LastName = register.LastName, IsActive = true, 
-                RoleId = register.RoleId, GroupId = (register.GroupId == 0 ? null: register.GroupId) };
+            var user = new User() { 
+                UserName = register.UserName,
+                Password = register.Password,
+                FirstName = register.FirstName,
+                LastName = register.LastName,
+                IsActive = true, 
+                RoleId = register.RoleId,
+                GroupId = (register.GroupId == 0 ? null: register.GroupId) 
+            };
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
             return user;
         }
-        public async Task<int> ActivateUser(int userId)
+        public async Task<Result<bool>> ActivateUser(int userId)
         {
-            var user = _context.Users.Find(userId);
-            if (user == null)
+            try
             {
-                return 0;
+                var user = _context.Users.Find(userId);
+                if (user == null)
+                {
+                    return Result<bool>.Failure("This user not found.");
+                }
+                user.IsActive = true;
+                user.LastModifiedOn = DateTime.UtcNow;
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync();
+                return Result<bool>.Success(true, "Users activated successfully.");
             }
-            user.IsActive = true;
-            user.LastModifiedOn = DateTime.UtcNow;
-            _context.Users.Update(user);
-            await _context.SaveChangesAsync();
-            return user.Id;
+            catch (Exception ex)
+            {
+                return Result<bool>.Failure("Failed to activate user.");
+            }
         }
-        public async Task<int> DeactivateUser(int userId)
+
+        public async Task<Result<bool>> DeactivateUser(int userId)
         {
-            var user = _context.Users.Find(userId);
-            if (user == null) {
-                return 0;
+            try
+            {
+                var user = _context.Users.Find(userId);
+                if (user == null)
+                {
+                    return Result<bool>.Failure("This user not found.");
+                }
+                user.IsActive = false;
+                user.LastModifiedOn = DateTime.UtcNow;
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync();
+                return Result<bool>.Success(true, "Users Deactivated successfully.");
+            } catch (Exception ex)
+            {
+                return Result<bool>.Failure("Failed to Deactivate user.");
             }
-            user.IsActive = false;
-            user.LastModifiedOn = DateTime.UtcNow;
-            _context.Users.Update(user);
-            await _context.SaveChangesAsync();
-            return user.Id;
         }
+
     }
 }

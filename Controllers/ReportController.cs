@@ -9,7 +9,7 @@ namespace ObourLand.Controllers
     //[Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class ReportController : ControllerBase
+    public class ReportController : BaseController
     {
         private readonly ILogger<ReportController> _logger;
         private readonly ReportService _reportService;

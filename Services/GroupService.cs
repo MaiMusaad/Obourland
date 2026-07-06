@@ -22,42 +22,63 @@ namespace ObourLand.Services
             }).ToListAsync();
         }
 
-        public async Task Create(GroupDto group)
+        public async Task<Result<bool>> Create(GroupDto group)
         {
-            _context.Groups.Add(new Group {Name = group.Name, IsActive = true});
-            await _context.SaveChangesAsync();
+            try
+            {
+                _context.Groups.Add(new Group { Name = group.Name, IsActive = true });
+                await _context.SaveChangesAsync();
+                return Result<bool>.Success(true, "Group created successfully.");
+            }catch(Exception ex)
+            {
+                return Result<bool>.Failure("Failed to create group.");
+            }
         }
 
-        public async Task Update(GroupDto group) {
-            _context.Groups.Update(new Group {
-               Id= group.Id, Name = group.Name, IsActive = true , LastModifiedOn = DateTime.Now
-            });
-            await _context.SaveChangesAsync();
+        public async Task<Result<bool>> Update(GroupDto request) 
+        {
+            try
+            {
+                var group = await _context.Groups.FirstOrDefaultAsync(f => f.Id == request.Id);
+                if(group == null)
+                    return Result<bool>.Failure("Group not found.");
+
+                group.Name = request.Name;
+                group.LastModifiedOn = DateTime.UtcNow;
+                _context.Groups.Update(group);
+                await _context.SaveChangesAsync();
+                return Result<bool>.Success(true, "Group updated successfully.");
+
+            }
+            catch (Exception ex)
+            {
+                return Result<bool>.Failure("Failed to update group.");
+            }
         }
 
-        public async Task<int> Activate(int id)
+        public async Task<Result<bool>> Activate(int id)
         {
            Group? group = _context.Groups.Find(id);
             if (group == null) {
-                return -1;
+                return Result<bool>.Failure("This group not found.");
             }
             group.IsActive = true;
             group.LastModifiedOn = DateTime.Now;
             await _context.SaveChangesAsync();
-            return 0;
+            return Result<bool>.Success(true, "Group activated successfully.");
         }
 
-        public async Task<int> Deactivate(int id)
+        public async Task<Result<bool>> Deactivate(int id)
         {
             Group? group = _context.Groups.Find(id);
             if (group == null)
             {
-                return -1;
+                return Result<bool>.Failure("This group not found.");
             }
             group.IsActive = false;
             group.LastModifiedOn = DateTime.Now;
             await _context.SaveChangesAsync();
-            return 0;
+            return Result<bool>.Success(true, "Group deactivated successfully.");
         }
 
     }
