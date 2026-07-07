@@ -2,8 +2,9 @@
 {
     public enum UserRoles
     {
-        TeamLead = 1,
-        Supervisor = 2,
-        SalesMan = 3
+        Admin = 1,
+        SalesMan = 2,
+        Supervisor = 3,
+       
     }
 }
