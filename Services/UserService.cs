@@ -16,7 +16,7 @@ namespace ObourLand.Services
 
         public async Task<List<UserDto>> GetAll()
         {
-            return await _context.Users.Where(w => w.IsActive == true).Select(s => new UserDto
+            return await _context.Users.Where(w => w.IsActive == true && w.RoleId != (int)UserRoles.Admin).Select(s => new UserDto
             {
                 UserId = s.Id,
                 UserName = s.UserName,
@@ -44,7 +44,7 @@ namespace ObourLand.Services
 
         public async Task<GroupedUsersDto?> GetByGroup(int groupId)
         {
-            var res = await _context.Users.Where(w => w.IsActive == true && w.GroupId == groupId && groupId > 0 && w.Group.IsActive == true)
+            var res = await _context.Users.Where(w => w.IsActive == true && w.GroupId == groupId && groupId > 0 && w.Group.IsActive == true && w.RoleId != (int)UserRoles.Admin)
                                         .GroupBy(g => g.GroupId)
                                        .Select(s => new GroupedUsersDto
                                        {
@@ -80,7 +80,7 @@ namespace ObourLand.Services
 
         public async Task<List<UserDto>> GetAssignedUsers(int supervisorId)
         {
-            var users = await _context.Users.Where(w => w.IsActive == true && w.SupervisorId == supervisorId)
+            var users = await _context.Users.Where(w => w.IsActive == true && w.SupervisorId == supervisorId && w.RoleId != (int)UserRoles.Admin)
                                             .Select(s => new UserDto
                                             {
                                                 UserId = s.Id,
@@ -98,7 +98,7 @@ namespace ObourLand.Services
         {
             try
             {
-                var users = await _context.Users.Where(w => userIds.Contains(w.Id)).ToListAsync();
+                var users = await _context.Users.Where(w => userIds.Contains(w.Id) && w.RoleId != (int)UserRoles.Admin).ToListAsync();
                 users = users.Select(s =>
                 {
                     s.SupervisorId = supervisorId;
