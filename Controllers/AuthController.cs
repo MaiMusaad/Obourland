@@ -33,16 +33,23 @@ namespace ObourLand.Controllers
                 return Ok(new { token });
             }
 
-            _logger.LogWarning("User not exist");
-            return BadRequest("user not found.");
+            _logger.LogWarning("Invalid username or password.");
+            return BadRequest("Invalid username or password.");
         }
 
         [HttpPost("Register")]
+        [ProducesResponseType(typeof(Result<UserDto>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(Result<UserDto>), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Register([FromBody] RegisterDto request)
         {
             _logger.LogInformation("Start Register method");
             var res = await _userService.Create(request);
             _logger.LogInformation("End Register method");
+            if(res.IsSuccess == false)
+            {
+                _logger.LogWarning("Register failed: {Message}", res.Message);
+                return BadRequest(res);
+            }
             return Ok(res);
         }
 

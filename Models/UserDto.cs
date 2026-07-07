@@ -9,5 +9,6 @@
         public string? GroupName { get; set; }
         public string? RoleName { get; set; }
         public string? SupervisorName { get; set; }
+        public DateTime? CreatedOn { get; set; }
     }
 }

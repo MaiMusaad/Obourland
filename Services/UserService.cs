@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 using ObourLand.Entities;
 using ObourLand.Enums;
 using ObourLand.Models;
@@ -25,6 +26,7 @@ namespace ObourLand.Services
                 GroupName = s.Group.Name,
                 RoleName = s.Role.Name,
                 SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}",
+                CreatedOn = s.CreatedOn
             }).ToListAsync();
         }
 
@@ -38,7 +40,8 @@ namespace ObourLand.Services
                                               LastName = s.LastName,
                                               GroupName = s.Group.Name,
                                               RoleName = s.Role.Name,
-                                              SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}"
+                                              SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}",
+                                              CreatedOn = s.CreatedOn
                                        }).FirstOrDefaultAsync();
         }
 
@@ -58,6 +61,7 @@ namespace ObourLand.Services
                                                LastName = ss.LastName,
                                                RoleName = ss.Role.Name,
                                                GroupName = ss.Group.Name,
+                                               CreatedOn = ss.CreatedOn
                                            }).ToList()
                                        }).FirstOrDefaultAsync();
             return res;
@@ -73,7 +77,9 @@ namespace ObourLand.Services
                                             FirstName = s.FirstName,
                                             LastName = s.LastName,
                                             RoleName = s.Role.Name,
-                                        }).ToListAsync();
+                                            GroupName = s.Group != null? s.Group.Name: " ",
+                                            CreatedOn = s.CreatedOn
+                                       }).ToListAsync();
 
             return users;
         }
@@ -89,7 +95,8 @@ namespace ObourLand.Services
                                                 LastName = s.LastName,
                                                 GroupName = s.Group.Name,
                                                 RoleName = s.Role.Name,
-                                                SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}"
+                                                SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}",
+                                                CreatedOn = s.CreatedOn
                                             }).ToListAsync();
             return users;
         }
@@ -115,30 +122,52 @@ namespace ObourLand.Services
             }
         }
 
-        public async Task<User> CheckUser(string userName, string password)
+        public async Task<User?> CheckUser(string userName, string password)
         {
-            return await _context.Users.FirstOrDefaultAsync(w => w.UserName == userName && password == password && w.IsActive == true);
+            var user = await _context.Users.FirstOrDefaultAsync(w => w.UserName == userName && w.Password == password && w.IsActive == true);
+            return user;
         }
 
-        public async Task<User> Create(RegisterDto register)
+        public async Task<Result<UserDto>> Create(RegisterDto register)
         {
-            var checkUseName = await _context.Users.FirstOrDefaultAsync(d => d.UserName == register.UserName);
-            if (checkUseName != null) {
-                throw new InvalidOperationException("Username already exists.");
+            try
+            {
+                var checkUseName = await _context.Users.FirstOrDefaultAsync(d => d.UserName == register.UserName);
+                if (checkUseName != null)
+                {
+                    Result<UserDto>.Failure("Username already exists.");
+                }
+
+                var user = new User()
+                {
+                    UserName = register.UserName,
+                    Password = register.Password,
+                    FirstName = register.FirstName,
+                    LastName = register.LastName,
+                    IsActive = true,
+                    RoleId = register.RoleId,
+                    GroupId = (register.GroupId == 0 ? null : register.GroupId),
+                    CreatedOn = DateTime.UtcNow
+                };
+                _context.Users.Add(user);
+                await _context.SaveChangesAsync();
+
+                var userDto = new UserDto()
+                {
+                    UserId = user.Id,
+                    UserName = register.UserName,
+                    FirstName = register.FirstName,
+                    LastName = register.LastName,
+                    RoleName = Enum.GetName(typeof(UserRoles), register.RoleId) ?? "Unknown",
+                    GroupName = register.GroupId.ToString(),
+                    CreatedOn = DateTime.UtcNow
+                };
+                return Result<UserDto>.Success(userDto, "User created successfully.");
+            }catch(Exception ex)
+            {
+                return Result<UserDto>.Failure(ex.Message);
             }
-            var user = new User() { 
-                UserName = register.UserName,
-                Password = register.Password,
-                FirstName = register.FirstName,
-                LastName = register.LastName,
-                IsActive = true, 
-                RoleId = register.RoleId,
-                GroupId = (register.GroupId == 0 ? null: register.GroupId) ,
-                CreatedOn = DateTime.UtcNow
-            };
-            _context.Users.Add(user);
-            await _context.SaveChangesAsync();
-            return user;
+           
         }
 
         public async Task<Result<bool>> UpdateProfile(UpdateUserDto request)
