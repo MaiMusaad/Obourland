@@ -24,6 +24,7 @@ namespace ObourLand.Services
             new Claim(JwtRegisteredClaimNames.Sub, user.UserName),
             new Claim("UserName", user.UserName),
             new Claim("UserId", user.Id.ToString()),
+            new Claim("RoleId", user.RoleId.ToString()),
             new Claim(ClaimTypes.Name, $"{user.FirstName} {user.LastName}")
         };
 
