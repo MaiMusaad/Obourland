@@ -110,16 +110,26 @@ namespace ObourLand.Services
         {
             try
             {
-                var users = await _context.Users.Where(w => userIds.Contains(w.Id))
+                var newAssignedUsers = await _context.Users.Where(w => userIds.Contains(w.Id))
                                           .ToListAsync();
 
-                users = users.Select(s =>
+                newAssignedUsers = newAssignedUsers.Select(s =>
                 {
                     s.SupervisorId = supervisorId;
                     return s;
                 }).ToList();
+                _context.Users.UpdateRange(newAssignedUsers);
 
-                _context.Users.UpdateRange(users);
+                var unAssignedUsers = await _context.Users.Where(w => w.SupervisorId == supervisorId && !userIds.Contains(w.Id))
+                                                          .ToListAsync();
+                unAssignedUsers = unAssignedUsers.Select(s =>
+                {
+                    s.SupervisorId = null;
+                    return s;
+                }).ToList();
+                _context.Users.UpdateRange(unAssignedUsers);
+
+
                 await _context.SaveChangesAsync();
                 return Result<bool>.Success(true, "Users assigned to supervisor successfully.");
             }
@@ -237,6 +247,18 @@ namespace ObourLand.Services
                 user.IsActive = false;
                 user.LastModifiedOn = DateTime.UtcNow;
                 _context.Users.Update(user);
+
+                if(user.RoleId == (int)UserRoles.Supervisor)
+                {
+                    var assignedUsers = await _context.Users.Where(w => w.SupervisorId == userId).ToListAsync();
+                    foreach(var assignedUser in assignedUsers)
+                    {
+                        assignedUser.SupervisorId = null;
+                        assignedUser.LastModifiedOn = DateTime.UtcNow;
+                    }
+                    _context.Users.UpdateRange(assignedUsers);
+                }
+
                 await _context.SaveChangesAsync();
                 return Result<bool>.Success(true, "Users Deactivated successfully.");
             } catch (Exception ex)

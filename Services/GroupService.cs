@@ -96,6 +96,16 @@ namespace ObourLand.Services
             }
             group.IsActive = false;
             group.LastModifiedOn = DateTime.Now;
+            _context.Groups.Update(group);
+
+            var users = await _context.Users.Where(w => w.GroupId == id).ToListAsync();
+            users = users.Select(s =>
+            {
+                s.GroupId = null;
+                return s;
+            }).ToList();
+            _context.Users.UpdateRange(users);
+
             await _context.SaveChangesAsync();
             return Result<bool>.Success(true, "Group deactivated successfully.");
         }
