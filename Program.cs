@@ -56,7 +56,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ObourlandDb")));
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("ObourlandDb"),
+        sqlOptions => sqlOptions.UseCompatibilityLevel(120)));
 
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<ReportService>();

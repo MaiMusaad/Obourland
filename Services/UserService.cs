@@ -24,6 +24,7 @@ namespace ObourLand.Services
                 FirstName = s.FirstName,
                 LastName = s.LastName,
                 GroupName = s.Group.Name,
+                RoleId = s.RoleId,
                 RoleName = s.Role.Name,
                 SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}",
                 CreatedOn = s.CreatedOn
@@ -39,6 +40,7 @@ namespace ObourLand.Services
                                               FirstName = s.FirstName,
                                               LastName = s.LastName,
                                               GroupName = s.Group.Name,
+                                              RoleId = s.RoleId,
                                               RoleName = s.Role.Name,
                                               SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}",
                                               CreatedOn = s.CreatedOn
@@ -59,6 +61,7 @@ namespace ObourLand.Services
                                                UserName = ss.UserName,
                                                FirstName = ss.FirstName,
                                                LastName = ss.LastName,
+                                               RoleId = ss.RoleId,
                                                RoleName = ss.Role.Name,
                                                GroupName = ss.Group.Name,
                                                CreatedOn = ss.CreatedOn
@@ -76,6 +79,7 @@ namespace ObourLand.Services
                                             UserName = s.UserName,
                                             FirstName = s.FirstName,
                                             LastName = s.LastName,
+                                            RoleId = s.RoleId,
                                             RoleName = s.Role.Name,
                                             GroupName = s.Group != null? s.Group.Name: " ",
                                             CreatedOn = s.CreatedOn
@@ -94,6 +98,7 @@ namespace ObourLand.Services
                                                 FirstName = s.FirstName,
                                                 LastName = s.LastName,
                                                 GroupName = s.Group.Name,
+                                                RoleId = s.RoleId,
                                                 RoleName = s.Role.Name,
                                                 SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}",
                                                 CreatedOn = s.CreatedOn
@@ -105,7 +110,9 @@ namespace ObourLand.Services
         {
             try
             {
-                var users = await _context.Users.Where(w => userIds.Contains(w.Id) && w.RoleId != (int)UserRoles.Admin).ToListAsync();
+                var users = await _context.Users.Where(w => userIds.Contains(w.Id))
+                                          .ToListAsync();
+
                 users = users.Select(s =>
                 {
                     s.SupervisorId = supervisorId;
@@ -158,6 +165,7 @@ namespace ObourLand.Services
                     UserName = register.UserName,
                     FirstName = register.FirstName,
                     LastName = register.LastName,
+                    RoleId =  register.RoleId,
                     RoleName = Enum.GetName(typeof(UserRoles), register.RoleId) ?? "Unknown",
                     GroupName = register.GroupId.ToString(),
                     CreatedOn = DateTime.UtcNow
