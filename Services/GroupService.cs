@@ -34,7 +34,7 @@ namespace ObourLand.Services
                     LastName = s.LastName,
                     GroupName = s.Group != null ? s.Group.Name : null,
                     RoleName = s.Role != null ? s.Role.Name : null,
-                    SupervisorName = s.Supervisor != null ? $"{s.Supervisor.FirstName} {s.Supervisor.LastName}" : null
+                    SupervisorName = s.Supervisor != null ? $"{s.Supervisor.UserName}" : null
                 })
                 .ToListAsync();
 

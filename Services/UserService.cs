@@ -26,7 +26,7 @@ namespace ObourLand.Services
                 GroupName = s.Group.Name,
                 RoleId = s.RoleId,
                 RoleName = s.Role.Name,
-                SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}",
+                SupervisorName = $"{s.Supervisor.UserName}",
                 CreatedOn = s.CreatedOn
             }).ToListAsync();
         }
@@ -42,7 +42,7 @@ namespace ObourLand.Services
                                               GroupName = s.Group.Name,
                                               RoleId = s.RoleId,
                                               RoleName = s.Role.Name,
-                                              SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}",
+                                              SupervisorName = $"{s.Supervisor.UserName}",
                                               CreatedOn = s.CreatedOn
                                        }).FirstOrDefaultAsync();
         }
@@ -100,7 +100,7 @@ namespace ObourLand.Services
                                                 GroupName = s.Group.Name,
                                                 RoleId = s.RoleId,
                                                 RoleName = s.Role.Name,
-                                                SupervisorName = $"{s.Supervisor.FirstName} {s.Supervisor.LastName}",
+                                                SupervisorName = $"{s.Supervisor.UserName}",
                                                 CreatedOn = s.CreatedOn
                                             }).ToListAsync();
             return users;
